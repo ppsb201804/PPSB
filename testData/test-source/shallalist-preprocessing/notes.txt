@@ -1,0 +1,9 @@
+Blacklist background:
+http://www.shalla.de/Info/blacklists.html
+
+Download:
+http://www.shallalist.de/Downloads/shallalist.tar.gz
+
+(1.7 million domains and URLs under different categories)
+
+Three scripts under UNIX systems are included to combine urls and domains of different categories into single file for demo input.

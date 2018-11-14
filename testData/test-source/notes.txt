@@ -1,0 +1,3 @@
+phishtank dataset is updated every day, latest version 31 Oct 2018
+shallalist (bigblacklist) last updated 8 May 2018
+malwaredomains last updated 8 June 2018

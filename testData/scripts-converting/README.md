@@ -32,7 +32,7 @@ unsafe.ppsb.com
 
 ## Number of entries 
 (original canonicalable URL -> deduplicated after canonicalization)  
-phishtank: 31887 -> 31060  
+phishtank: 25559 -> 25008  
 <!-- malwaredomains:    -->
 bigBlacklistURLs: 178649 -> 177770  
 bigBlacklistdomains: 1605920 -> 1571617  

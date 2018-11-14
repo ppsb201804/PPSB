@@ -6,8 +6,8 @@ var fs  = require("fs");
 var objs = [];
 var processedURLs = [];
 
-var src = path.normalize(__dirname+'/../test-source/shallalist1M.txt');
-var dest = path.normalize(__dirname+'/../release-json/shallalist1M.withoutmeta.json');
+var src = path.normalize(__dirname+'/../test-source/phishtank20181031.txt');
+var dest = path.normalize(__dirname+'/../release-json/phishtank.withoutmeta.json');
 // var withmeta = 0;
 
 if (argv.s) {

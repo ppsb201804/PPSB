@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*.DS_Store
+/.vs
+/.vscode
+/server/node_modules
+/web/node_modules
+/extension.crx
+/extension.zip
+/experiments/test_chrome_open_timie/.vs/test_chrome_open_timie/v15
+/experiments/test_chrome_open_timie/bin/Debug
+/experiments/test_chrome_open_timie/obj/Debug
