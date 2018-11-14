@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SafeBrowsing | Content Provider Service</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+
+    <div class="middle-box text-center loginscreen animated fadeInDown loginContainer">
+        <div>
+            <div>
+
+                <h1 class="logo-name">PPSB</h1>
+
+            </div>
+            <h3>A Platform for Privacy-Preserving Safe Browsing</h3>
+            <p>Please log in the control panel.</p>
+			<p id="idfaillogin" style="color:red;">Error user and password.</p>
+            <form class="m-t m-inputform" role="form" action="/login" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Admin Username" name="user" required="">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Admin Password" name="psw" required="">
+                </div>
+
+                <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+                
+            </form>
+            <p class="m-t"> <small>PPSB for Content Provider &copy; 2018</small> </p>
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+	<script src="js/login.js"></script>
+    <script src="js/jquery/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+
+</body>
+
+</html>

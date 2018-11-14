@@ -1,0 +1,1 @@
+﻿Encrypted blacklist folder

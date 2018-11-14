@@ -1,0 +1,1 @@
+﻿Plaintext blacklist folder

@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/option.css" rel="stylesheet" />
+    <script src="js/config.js"></script>
+    <script src="js/localstore.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/angular.min.js"></script>
+</head>
+<body ng-app="SafeBrowsingOption">
+
+    <div id="contain" ng-init="init()" ng-controller="OptionPageController as OptionPage">
+
+        <div id="header">
+            <button type="button" data-toggle="modal" data-target="#addNewModal" class="btn btn-outline-primary">Add New</button>
+            <button type="button" data-toggle="modal" data-target="#updateAllModal" class="btn btn-outline-success">Update All</button>
+            <button type="button" data-toggle="modal" data-target="#removeAllModal" class="btn btn-outline-danger">Remove All</button>
+
+            <div id="content" class="card">
+                <!-- Default card contents -->
+                <div class="card-header">Blacklist Providers</div>
+                <div class="card-body">
+                    <p>Manage your blacklist providers in this page, and please send us your <a target="_blank" href="https://goo.gl/forms/0I2KZX88cRv6AgJA3">feedback</a>.</p>
+                    <p></p>
+                </div>
+
+                <!-- Table -->
+                <table ng-hide="OptionPage.MetaList.length==0" class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Server Address</th>
+                            <th>Version</th>
+                            <th>RecordsNum</th>
+                            <th>OPRF Type</th>
+                            <th>Metadata</th>
+                            <th>Operation</th>
+                        </tr>
+                    </thead>
+                    <tbody class="key_list_table">
+                        <tr ng-repeat="key in OptionPage.MetaList">
+                            <td scope="row" width="10px">{{$index + 1}}</td>
+                            <td width="100px">{{key.source}}</td>
+                            <td>{{key.url}}</td>
+                            <td width="180px">{{key.version}}</td>
+                            <td width="180px">
+                                {{key.num}}
+                            </td>
+                            <td width="180px">
+                                {{key.sectype}}
+                            </td>
+                            <td width="180px">
+                                {{key.withmeta?'Yes':'No'}}
+                            </td>
+                            <td width="180px">
+                                <button ng-click="update($index);" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModalSetKey">Update</button>
+                                <button ng-click="delete($index);" type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModalRevokeKey">Remove</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!--Add New Source-->
+        <div class="modal fade" id="addNewModal" tabindex="-1" role="dialog" aria-labelledby="labelAddNewModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title text-muted" id="labelAddNewModal"><strong>Add new source</strong></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+
+                        <p>Please provide the URL of the source.</p>
+
+                        <div>
+                            <input type="text" class="form-control" ng-model="OptionPage.addNewUrl" id="inputSetKey" />
+                        </div>
+                        <br />
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" ng-click="addNew();" class="btn btn-primary" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Update All Source-->
+        <div class="modal fade" id="updateAllModal" tabindex="-1" role="dialog" aria-labelledby="labelUpdateAllModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title text-muted" id="labelUpdateAllModal"><strong>Update all resource</strong></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+
+                        <p>Update all sources may need few minutes. </p>
+                        <p>Do you still want to do that?</p>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                        <button type="button" ng-click="updateAll();" class="btn btn-primary" data-dismiss="modal">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Remove all list-->
+        <div class="modal fade" id="removeAllModal" tabindex="-1" role="dialog" aria-labelledby="labelRemoveAllModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title text-muted" id="labelRemoveAllModal"><strong>Remove all resource</strong></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+
+                        <p>This operation will remove all the sources. </p>
+                        <p>Do you still want to do that?</p>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                        <button type="button" ng-click="removeAll();" class="btn btn-primary" data-dismiss="modal">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="js/option.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+http://a1.b.c/index.html
+http://a2.b.c/index.html
+http://a3.b.c/index.html
+http://a4.b.c/index.html
+http://a5.b.c/index.html
+http://a6.b.c/index.html

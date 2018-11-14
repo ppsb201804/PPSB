@@ -1,0 +1,77 @@
+﻿body, html {
+    width: 700px;
+    max-height: 400px;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.top {
+    background-color: white;
+    color: black;
+    padding: 15px;
+}
+
+    .top h6 {
+        font-weight: bold;
+        font-size: 16px;
+        color: #5E5E5E;
+    }
+
+    .top small {
+        line-height: 20px;
+    }
+
+.blocktitle {
+    background-color: #13BAD3;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 15px;
+    color: white;
+}
+
+.urlrecord {
+    padding: 10px 0px 10px 0px;
+    height: 70px;
+}
+
+    .urlrecord img {
+        margin: 2px 15px 0px 18px;
+    }
+
+.urlitem {
+    font-size: 14px;
+    margin-left: 8px;
+}
+
+.showmore {
+    padding: 2px 25px 10px 0px;
+    font-size: 14px;
+}
+
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.lh-100 {
+    line-height: 1;
+}
+
+.lh-125 {
+    line-height: 1.25;
+}
+
+.lh-150 {
+    line-height: 1.5;
+}
+
+.showmoreleft {
+    padding-left: 20px;
+    margin-right: 395px;
+}
+
+.showmoreright a {
+    margin-left: 15px;
+    display: inline-block;
+}

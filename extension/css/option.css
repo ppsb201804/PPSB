@@ -1,0 +1,31 @@
+﻿body {
+    margin: 0px;
+}
+
+
+#contain {
+    width: 1500px;
+    margin: 100px auto;
+}
+
+#header {
+    margin-top: 30px;
+}
+
+#content {
+    margin-top: 25px;
+}
+
+
+#header button {
+    margin-right: 12px;
+}
+
+.key_list_table tr td {
+    line-height: 40px !important;
+}
+
+.modal-body p{
+    margin-bottom:10px;
+    line-height:25px;
+}

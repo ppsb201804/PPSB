@@ -1,0 +1,56 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row" ng-controller="DashboardCtrl as dashboard">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>All available images are list as follows.</h5>
+                    <div ibox-tools> </div>
+                </div>
+                <div ng-init="showList()" class="ibox-content">
+                    <input type="text" class="form-control input-sm m-b-xs" id="filter"
+                           placeholder="Search in table">
+                    <table class="footable table table-stripped" data-page-size="8" data-filter=#filter>
+                        <thead>
+                            <tr>
+                                <th>Version</th>
+                                <th>Url</th>
+                                <th>Number</th>
+                                <th>OPRF Type</th>
+                                <th>WithMeta</th>
+                                <th>State</th>
+                                <th>Operation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr ng-repeat="item in items">
+                                <td>
+                                    {{item.version}}
+                                </td>
+                                <td>
+                                    {{item.url}}
+                                </td>
+                                <td class="center">{{item.num}}</td>
+                                <td class="center">{{item.sectype}}</td>
+                                <td class="center">{{item.withmeta}}</td>
+                                <td class="center">{{item.state}}</td>
+                                <td class="center">
+                                    <button ng-click="encrypt(item.version)" ng-show="item.state=='Plaintext'" class="btn btn-sm btn-success">Encrypt</button>
+                                    <button ng-click="primary(item.version)" ng-show="item.state=='Available'" class="btn btn-sm btn-primary">Make Primary</button>
+                                    <button ng-click="delete(item.version)" ng-show="item.state!='Primary' && item.state != 'Building'" class="btn btn-sm btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5">
+                                    <ul class="pagination pull-right"></ul>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

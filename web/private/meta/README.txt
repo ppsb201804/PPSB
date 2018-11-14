@@ -1,0 +1,1 @@
+﻿All version meta folder
