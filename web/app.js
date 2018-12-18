@@ -1,6 +1,8 @@
 ﻿var createError = require('http-errors');
 var express = require('express');
 var http = require('http');
+var https = require('https');
+var fs = require('fs');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -37,8 +39,9 @@ if (config.server.sk2) {
     config.server.k2 = sjcl.bn.fromBits(sjcl.codec.base64.toBits(config.server.sk2));
 }
 
-
 var app = express();
+
+var port_ssl = 443;
 var port = 80;
 
 // view engine setup
@@ -91,3 +94,21 @@ app.use(function (err, req, res, next) {
 
 var server = http.createServer(app);
 server.listen(port);
+console.log(`HTTP Web Server Start at ${port}`);
+
+//if CA existed
+var CA_PATH = "/data/ca";
+if (fs.existsSync(`${CA_PATH}/web.key`)) {
+    //existed CA file
+
+    let server_ssl = https.createServer({
+        key: fs.readFileSync(`${CA_PATH}/web.key`),
+        cert: fs.readFileSync(`${CA_PATH}/web.pem`)
+    }, app);
+
+    server_ssl.listen(port_ssl);
+
+    console.log(`HTTPS Web Server Start at ${port_ssl}`);
+
+}
+

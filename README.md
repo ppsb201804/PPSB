@@ -63,3 +63,12 @@ If you are a content provider and want to deploy your own PPSB server, please wa
    1. Register ...
 6. Stop service
    1. `npm stop`
+
+# Enabling HTTPS
+
+## (Adding new source in Extension should use the URL which starts with "https")
+
+1. Apply for CA files including .PEM and .KEY
+2. Put these CA files into the PATH:"/data/ca"
+3. Rename them to "web.pem" and "web.key"
+4. Restart PPSB service
