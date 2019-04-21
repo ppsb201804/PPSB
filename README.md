@@ -1,5 +1,5 @@
 ﻿
-## Note: This project is related to a paper under submission. To maintain anonymity, we use this new account to publish the source code. Later, we will make the original DEV repository public:)
+## Note: This project is related to a paper under submission. Later, we will make the original DEV repository public:)
 
 # Introduction
 
